@@ -1,0 +1,56 @@
+CREATE DATABASE micro_x;
+USE micro_x;
+
+
+
+CREATE TABLE usuarios (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    usuario VARCHAR(50) NOT NULL UNIQUE,
+    contraseña VARCHAR(50) NOT NULL,
+    foto_perfil VARCHAR(255) DEFAULT NULL
+);
+
+INSERT INTO usuarios (usuario, contraseña) VALUES
+    ('rober', '123'),
+    ('dany', '123'),
+    ('faruzan', '123'),
+    ('tao', '123'),
+    ('amber', '123');
+
+
+CREATE TABLE publicaciones (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    id_usuario INT,
+    texto VARCHAR(280),
+    fecha_hora DATETIME,
+    imagen VARCHAR(255),
+    FOREIGN KEY (id_usuario) REFERENCES usuarios(id)
+);
+
+
+INSERT INTO publicaciones (id_usuario, texto, fecha_hora, imagen) VALUES
+    (1, 'Publicación 1 de rober', '2024-02-07 08:00:00', NULL),
+    (2, 'Publicación 2 de dany', '2024-02-07 08:15:00', NULL),
+    (3, 'Publicación 3 de faruzan', '2024-02-07 08:30:00', NULL),
+    (4, 'Publicación 4 de tao', '2024-02-07 08:45:00', NULL),
+    (5, 'Publicación 5 de amber', '2024-02-07 09:00:00', NULL),
+    (1, 'Publicación 6 de rober', '2024-02-07 09:15:00', NULL),
+    (2, 'Publicación 7 de dany', '2024-02-07 09:30:00', NULL),
+    (3, 'Publicación 8 de faruzan', '2024-02-07 09:45:00', NULL),
+    (4, 'Publicación 9 de tao', '2024-02-07 10:00:00', NULL),
+    (5, 'Publicación 10 de amber', '2024-02-07 10:15:00', NULL),
+    (1, 'Publicación 11 de rober', '2024-02-07 10:30:00', NULL),
+    (2, 'Publicación 12 de dany', '2024-02-07 10:45:00', NULL),
+    (3, 'Publicación 13 de faruzan', '2024-02-07 11:00:00', NULL),
+    (4, 'Publicación 14 de tao', '2024-02-07 11:15:00', NULL),
+    (5, 'Publicación 15 de amber', '2024-02-07 11:30:00', NULL),
+    (1, 'Publicación 16 de rober', '2024-02-07 11:45:00', NULL),
+    (2, 'Publicación 17 de dany', '2024-02-07 12:00:00', NULL),
+    (3, 'Publicación 18 de faruzan', '2024-02-07 12:15:00', NULL),
+    (4, 'Publicación 19 de tao', '2024-02-07 12:30:00', NULL),
+    (5, 'Publicación 20 de amber', '2024-02-07 12:45:00', NULL);
+
+
+
+
+
